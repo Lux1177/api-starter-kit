@@ -47,29 +47,12 @@ class AskInstallCommand extends Command implements GetOutputInterface
         $this->symfonyIO = new SymfonyStyle($input, $output);
         $this->output = $output;
 
-        $this->waitConnection();
         $this->runCommandAndNotify('ask:deploy');
         $this->runCommandAndNotify('ask:generate:jwtKeys');
+        $this->runCommandAndNotify('d:d:c');
 
         $this->symfonyIO->success('Successfully installed');
 
         return Command::SUCCESS;
-    }
-
-    private function waitConnection(): void
-    {
-        $this->symfonyIO->writeln("Try to connect to database");
-        $this->symfonyIO->writeln("Please, be patiently. First running of MySQL server requires much time");
-
-        while (true) {
-            try {
-                $this->entityManager->getConnection()->connect();
-                if ($this->entityManager->getConnection()->isConnected()) {
-                    return;
-                }
-            } catch (Throwable) {
-                sleep(5);
-            }
-        }
     }
 }
