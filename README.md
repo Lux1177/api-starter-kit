@@ -34,7 +34,7 @@ Install composer scripts:<br>
 To install project run command:<br>
 ```docker compose exec php bin/console ask:install```
 
-**Done! You can open <a href="http://localhost:8505/api" target="_blank">http://localhost:8505/api</a> via browser. 
+**Done! You can open <a href="http://localhost:8507/api" target="_blank">http://localhost:8505/api</a> via browser. 
 By the way, you can change this port by changing ```DOCKER_NGINX_PORT``` variable in [.env](.env) file.** 
 
 

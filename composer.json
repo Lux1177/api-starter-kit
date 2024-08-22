@@ -2,7 +2,7 @@
     "name": "lux1177/api-starter-kit",
     "type": "project",
     "license": "GPL-3.0-or-later",
-    "version": "1.0.0",
+    "description": "Api-starter-kit founded on kadirov/api-starter-kit",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
